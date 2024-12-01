@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+@keyframes glowingLight {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.bestseller-animation {
+  background: linear-gradient(
+    45deg,
+    #FF8C00,
+    #FFA500,
+    #FF8C00
+  );
+  background-size: 200% 100%;
+  animation: glowingLight 2s ease-in-out infinite;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Improve touch interactions */
+@media (hover: none) and (pointer: coarse) {
+  .carousel {
+    touch-action: pan-y;
+  }
+  
+  button, a {
+    touch-action: manipulation;
+  }
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Improve scrollbar appearance */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
